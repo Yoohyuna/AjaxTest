@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3.domob2.html(객체생성방법 2)</title>
+<script>
+   function test(){
+	   //형식) var 객체명=new Object();//형이 정해져 있지 않다.->java.lang.Object 처럼
+	   //        var Studuent=new Student();//학생만 저장
+	   var mem=new Object();
+	   //동적으로 멤버변수가 선언->객체명.동적멤버변수명=저장할값
+	   mem.id=1234; //private int id=1234;
+	   mem.name="테스트"; //String name="테스트";
+	   mem.hobby="바둑";//->음악감상,,, 	
+	   mem.sung="남자";//private String sung="남자"
+	   //자바->Setter=>public void setXXXX(자료형 매개변수명){this.멤버변수=매개변수}
+	   //형식)객체명.함수명=function(매개변수명) {this.멤버변수=값}
+	   mem.setHobby=function(hobby){
+		   this.hobby=hobby;
+	   }
+	   //Getter ->public 반환값 get멤버변수명(){ return this.멤버변수명}
+	   //형식)객체명.함수명=function() { return this.멤버변수명}
+	   mem.getHobby=function(){
+		   return this.hobby;
+	   }
+	   //public String toString(){}
+	   mem.toString=function(){
+		   return this.id+", "+this.name+", "+this.hobby+", "+this.sung
+	   }
+	   //객체명.함수명(저장할값)
+	   mem.setHobby("음악감상");
+	   alert(mem.toString());
+   }
+</script>
+</head>
+<body onload="test()">
+
+</body>
+</html>
+
